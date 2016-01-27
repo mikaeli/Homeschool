@@ -1,0 +1,34 @@
+% tekstauskirjainten viivasto 14mm korkea
+%
+% Suhteet viivastolle löytyvät osoitteesta:
+% http://www03.edu.fi/oppimateriaalit/kirjainuudistus/tekstauskirjaimet_uusi_viivasto.html
+%
+% Use pdflatex to build
+
+\documentclass[a4paper, 10pt]{article}
+\usepackage{tikz}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay]
+\tikzset{inner lines/.style={gray, ultra thin}}
+\tikzset{outer lines/.style={gray, thin}}
+
+
+\node at (current page.south west){
+  \begin{tikzpicture}[remember picture, overlay]
+
+    \foreach \y in {20, 43.996, ...,266}
+      {\draw[style=outer lines](20mm,\y mm) -- (19cm, \y mm);
+       \draw[style=inner lines](20mm,\y mm +4.082mm) -- (19cm, \y mm +4.082mm);
+       \draw[style=inner lines](20mm,\y mm +9.914mm) -- (19cm, \y mm +9.914mm);
+       \draw[style=outer lines](20mm,\y mm +13.996mm) -- (19cm, \y mm +13.996mm);
+      }
+
+  \end{tikzpicture}
+};
+\end{tikzpicture}
+
+
+\end{document}
