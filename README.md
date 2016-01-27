@@ -1,4 +1,4 @@
-# Homechooling stuff
+# Homeschooling stuff
 
 Repo for homeschooling material.
 
